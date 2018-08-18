@@ -9,8 +9,9 @@ let browserStatus = getExplore();
 function pageOnLoad() {
     pageContainCheck();
     coverReSize();
+    document.getElementById("Loading").style.display = "none";
     body.style.display = "block";
-    (!browserStatus) && blockBrowser();
+    //(!browserStatus) && blockBrowser();
 }
 
 function pageReSize() {
@@ -31,7 +32,7 @@ function pageContainCheck() {
         sizeAlert.style.display = "none";
         body.style.display = "block";
     }
-    (!browserStatus) && blockBrowser();
+    // (!browserStatus) && blockBrowser(); //Should be rebuild.
 }
 
 function getExplore() {
