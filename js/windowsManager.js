@@ -16,7 +16,7 @@ function pageReSize() {
 }
 
 function pageContainCheck() {
-    if (html.clientHeight < 300 || html.clientWidth < 280) {
+    if (html.clientHeight < 300 || html.clientWidth < 300) {
         sizeAlert.style.display = "block";
         body.style.display = "none";
     } else {
@@ -26,9 +26,5 @@ function pageContainCheck() {
 }
 
 function coverReSize() {
-    //Because we using footer as the Cover's footer,
-    //if we rebuild our page,please remove this.
-    let Height = html.clientHeight;
-    let footerHeight = document.getElementById("footer").clientHeight;
-    document.getElementById("Cover").style.height = (Height - footerHeight) + "px";
+    document.getElementById("Cover").style.height = html.clientHeight + "px";
 }
