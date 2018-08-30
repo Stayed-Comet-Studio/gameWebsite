@@ -16,17 +16,16 @@
 <div id="sizeAlerts" class="Alerts">您当前使用的浏览器窗口小于正常展示大小，请调整您的浏览器窗口大小。</div>
 <div id="browserAlerts" class="Alerts">
     <p>网页不兼容您的浏览器，请更换您的浏览器后再访问。</p>
-    <p>我们推荐使用<a href="https://www.mozilla.org/zh-CN/firefox/">Firefox</a>或者<a
-            href="https://chrome.google.com">Chrome</a>。</p>
+    <p>我们推荐使用最新版本的<a href="https://www.mozilla.org/zh-CN/firefox/"> Firefox </a>
+        或者<a href="https://chrome.google.com"> Chrome </a>。</p>
 </div>
 <!-- Page -->
-<div style="display: none" id="context">
-    <!-- Windows Manager Script -->
-    <script src="js/windowsManager.js"></script>
+<div style="display: none" id="context" class="">
+    <script src="js/windowsManager.js"><!-- Windows Manager Script --></script>
     <!-- Contents -->
-    <nav class="nav mainNav">
+    <nav class="nav mainNav text-right">
         <li class="nav-item">
-            <a class="nav-link" href="#Story">故事</a>
+            <a class="nav-link disabled">故事</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#Character">人物</a>
@@ -38,6 +37,7 @@
     <section id="Cover">
         <img id="Game-name" src="img/gameName.png">
         <img id="Logo-top" src="img/Logo.png">
+        <small id="Notice">*游戏仍在制作中，最后内容可能会与目前公布内容不同。</small>
     </section>
     <!-- Don't use
     <hgroup class="inDevelop text-center">
@@ -47,17 +47,11 @@
     <section id="Story" class="container content">
         <hgroup class="sectionTitle">
             <h1 class="display-2">故事</h1>
-            <h1 class="display-4">Story</h1>
+            <h2 class="display-4">Story</h2>
         </hgroup>
         <div class="row">
             <article class="col-md-12">
-                <h1>禾韵
-                    <small class="text-muted">女主角</small>
-                </h1>
-                <p class="lead">测试文本，等待书写。此处是总结性语句</p>
-                <p>测试文本，等待书写</p>
-                <p>测试文本，等待书写</p>
-                <p>测试文本，等待书写</p>
+
             </article>
         </div>
     </section>
@@ -65,22 +59,48 @@
     <section id="Character" class="container content">
         <hgroup class="sectionTitle">
             <h1 class="display-2">人物</h1>
-            <h1 class="display-4">Character</h1>
+            <h2 class="display-4">Character</h2>
         </hgroup>
         <div class="row">
-            <article class="col-md-12">
-                <h1>禾韵 <small class="text-muted">女主角</small></h1>
-                <p class="lead">测试文本，等待书写。此处是总结性语句</p>
-                <p>测试文本，等待书写</p>
-                <p>测试文本，等待书写</p>
-                <p>测试文本，等待书写</p>
+            <article class="col-md-5">
+                <img class="Character-img center-block" src="img/Character/heyun-1.png">
+            </article>
+            <article class="col-md-6">
+                <hgroup class="Character-name">
+                    <h1>禾韵
+                        <small class="text-muted">女主角</small>
+                    </h1>
+                </hgroup>
+                <p>极度内向、自闭的高二休学女生。</p>
+                <p>小时候由奶奶抚养，在奶奶那里度过了一段快乐的时光。因为褚言父亲是学校美术老师，女主结识了褚言。然而，奶奶在她小学三年级自杀，从此再也没能走出奶奶自杀的阴影。但好在，至少她还有褚言这一知心好友。</p>
+                <p>回到自己的父母家中，父母却没有奶奶的那份温柔，不断对脆弱的她施加压力。从此性格逐渐内向，到最后，周围只有褚言还在陪伴她。直到后来搬到其他城市生活，失去褚言的依靠，不擅长交友的她彻底失去了朋友。</p>
+                <p>在身心不断地折磨下，最终在高二时崩溃，住进疗养院接受心理治疗。于是，故事开始了...</p>
+            </article>
+        </div>
+        <div class="row">
+            <article class="Zhuyan-top col-md-5">
+                <img class="Character-img center-block" src="img/Character/heyun-1.png">
+            </article>
+            <article class="col-md-6">
+                <hgroup class="Character-name">
+                    <h1>褚言
+                        <small class="text-muted">男主角</small>
+                    </h1>
+                </hgroup>
+                <p>淳朴而又富有艺术细胞的高二男生，禾韵的发小，曾经的同学。</p>
+                <p>
+                    母亲去世得很早，在作为的美术老师的爸爸的养育和教导下保持着乐观的生活态度。从幼时就开始接受的艺术的熏陶，使其性格敏感细致，思维也较为感性感性，所以他在温柔地排斥大多数人的同时又对朋友异常地珍惜和认真。</p>
+                <p>在陌生人眼中他应该会是一个乐群而又温和的人吧。</p>
+            </article>
+            <article class="Zhuyan-right col-md-5">
+                <img class="Character-img center-block" src="img/Character/heyun-1.png">
             </article>
         </div>
     </section>
     <section id="Team" class="container content">
         <hgroup class="sectionTitle">
             <h1 class="display-2">团队</h1>
-            <h1 class="display-4">Team</h1>
+            <h2 class="display-4">Team</h2>
         </hgroup>
         <div class="row">
             <article class="col-md-4">
@@ -142,8 +162,7 @@
         </div>
     </footer>
     <!-- Bootstrap Scripts -->
-    <script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
-    <script src="https://cdn.rawgit.com/twbs/bootstrap/v4-dev/dist/js/bootstrap.js"></script>
+    <!--<script src="js/bootstrap.js"></script>-->
 </div>
 </body>
 </html>
