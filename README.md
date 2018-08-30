@@ -9,7 +9,7 @@ Use BootstrapV4(Sass) + Sass Compile(Ruby) + Autoprefixer to build this project.
 
 With IDE: WebStorm 2018.1.5
 
-### Enviroument Build Step
+### Enviroument Set Up Step
 
 1. Set up WebStorm.
 2. Get a ruby and node.js.
