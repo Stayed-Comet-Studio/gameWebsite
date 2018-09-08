@@ -36,7 +36,10 @@ function checkBrowserLevel() {
     let browser = navigator.appName;
     let b_version = navigator.appVersion;
     let version = parseFloat(b_version);
-    if ((browser == "Netscape" || browser == "Microsoft Internet Explorer") && (version > 4)) return false;
+    if ((browser == "Netscape" ||
+        browser == "Microsoft Internet Explorer" ||
+        browser == "Mozilla") && (version > 4))
+        return false;
     return true;
 }
 
