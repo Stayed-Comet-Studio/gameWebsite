@@ -96,31 +96,58 @@ footer {
   background: url("../img/coverBG.png") no-repeat center bottom;
   background-size: 100% auto;
   padding: 1rem;
-  & > #Game-name {
-    max-height: 68px;
-    position: relative;
-    top: 50%;
-    clear: both;
-    display: block;
-    margin: auto;
-  }
-  & > #Logo-top {
-    position: relative;
-    top: -68px;
-    max-width: 220px;
-    clear: both;
-    margin: auto;
-    display: block;
-  }
 }
 
-#Story {
-  display: none;
+#Game-intro {
+  font-size: 1.2rem;
+  position: relative;
+  top: 50%;
+  clear: both;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+#Logo-top {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  max-height: 50px;
+  clear: both;
+  margin: auto;
+  display: block;
 }
 
 @include media-breakpoint-up(sm) {
   .Zhuyan-top {
     display: none;
+  }
+}
+
+.white-left {
+
+}
+
+@media (min-width: 520px) {
+  .white-left {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-left: white 300px solid;
+    position: relative;
+    left: -310px;;
+  }
+}
+
+@media (min-width: 1200px) {
+  .white-left {
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: white;
+    border-left: white 999px solid;
+    position: relative;
+    left: -1009px;;
   }
 }
 

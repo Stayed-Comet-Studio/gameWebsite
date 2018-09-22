@@ -7,9 +7,10 @@ let sizeAlert = document.getElementById("sizeAlerts");
 function pageOnLoad() {
     pageContainCheck();
     coverReSize();
+    checkBrowserLevel() && blockBrowser();
     document.getElementById("Loading").style.display = "none";
     body.style.display = "block";
-    checkBrowserLevel() && blockBrowser();
+
 }
 
 function pageReSize() {
