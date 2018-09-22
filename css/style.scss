@@ -2,14 +2,32 @@
 @import "sass/bootstrap-reboot";
 @import "sass/bootstrap-grid";
 
+//Instead of the BG of theme.sass
+
+body {
+  background-color: #161626;
+}
+
+//Content from now
+
 .lead {
   font-size: 1.3rem;
+}
+
+#context {
+  display: none;
 }
 
 .Character-img {
   display: block;
   margin: auto;
   max-width: 200px;
+}
+
+.black-bg {
+  padding: 8px;
+  background-color: $black;
+  border-radius: 5px;
 }
 
 .Character-name {
@@ -44,10 +62,10 @@
 
 .sectionTitle {
   margin-bottom: 2rem;
-  color: theme-color('primary');
+  color: $gray-200;
   & > h2 {
     margin-top: -0.5rem;
-    color: darken(theme-color('primary'), 15%);
+    color: $gray-600;
   }
 }
 
@@ -93,34 +111,61 @@ footer {
 }
 
 #Cover {
-  background: url("../img/coverBG.png") no-repeat center bottom;
+  //background: url("../img/coverBG.png") no-repeat center bottom;
+  background: url("../img/bg.png") no-repeat center bottom;
   background-size: 100% auto;
   padding: 1rem;
-  & > #Game-name {
-    max-height: 68px;
-    position: relative;
-    top: 50%;
-    clear: both;
-    display: block;
-    margin: auto;
-  }
-  & > #Logo-top {
-    position: relative;
-    top: -68px;
-    max-width: 220px;
-    clear: both;
-    margin: auto;
-    display: block;
-  }
 }
 
-#Story {
-  display: none;
+#Game-intro {
+  font-size: 2rem;
+  position: relative;
+  top: 50%;
+  clear: both;
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+#Logo-top {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  max-height: 50px;
+  clear: both;
+  margin: auto;
+  display: block;
 }
 
 @include media-breakpoint-up(sm) {
   .Zhuyan-top {
     display: none;
+  }
+}
+
+.main-left {
+}
+
+@media (min-width: 520px) {
+  .main-left {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 10px;
+    border-left: $gray-900 300px solid;
+    position: relative;
+    left: -310px;;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main-left {
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: $gray-900;
+    border-left: $gray-900 999px solid;
+    position: relative;
+    left: -1009px;;
   }
 }
 
@@ -131,7 +176,11 @@ footer {
   }
 }
 
+
 @include media-breakpoint-down(sm) {
+  .black-bg {
+    background-color: unset;
+  }
   .mainNav {
     display: none;
   }

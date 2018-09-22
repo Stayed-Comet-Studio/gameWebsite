@@ -20,23 +20,15 @@
         或者<a href="https://chrome.google.com"> Chrome </a>。</p>
 </div>
 <!-- Page -->
-<div style="display: none" id="context" class="">
+<div id="context">
     <script src="js/windowsManager.js"><!-- Windows Manager Script --></script>
     <!-- Contents -->
-    <nav class="nav mainNav text-right">
-        <li class="nav-item">
-            <a class="nav-link disabled">故事</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#Character">人物</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#Team">团队</a>
-        </li>
-    </nav>
-    <section id="Cover">
-        <img id="Game-name" src="img/gameName.png">
-        <img id="Logo-top" src="img/Logo.png">
+
+    <section onpageshow="alert('on show.')" id="Cover">
+        <img id="Logo-top" src="img/gameName.png">
+        <div id="Game-intro">
+            <p>我是谁？</p>
+        </div>
         <small id="Notice">*游戏仍在制作中，最后内容可能会与目前公布内容不同。</small>
     </section>
     <!-- Don't use
@@ -44,26 +36,16 @@
         <h1>网站正在开发中</h1>
         <h2>In Developing</h2>
     </hgroup>-->
-    <section id="Story" class="container content">
-        <hgroup class="sectionTitle">
-            <h1 class="display-2">故事</h1>
-            <h2 class="display-4">Story</h2>
-        </hgroup>
-        <div class="row">
-            <article class="col-md-12">
-
-            </article>
-        </div>
-    </section>
 
     <section id="Character" class="container content">
-        <hgroup class="sectionTitle">
+        <hgroup class="sectionTitle main-left">
             <h1 class="display-2">人物</h1>
             <h2 class="display-4">Character</h2>
         </hgroup>
         <div class="row">
-            <article class="col-md-5">
-                <img class="Character-img center-block" src="img/Character/heyun-1.png">
+            <article class="col-md-5 black-bg">
+                <!--<img class="Character-img center-block" src="img/Character/heyun-1.png">-->
+                <p>此文件不参与展示</p>
             </article>
             <article class="col-md-6">
                 <hgroup class="Character-name">
@@ -78,8 +60,9 @@
             </article>
         </div>
         <div class="row">
-            <article class="Zhuyan-top col-md-5">
-                <img class="Character-img center-block" src="img/Character/zhuyan-1.png">
+            <article class="Zhuyan-top black-bg col-md-5">
+                <!--<img class="Character-img center-block" src="img/Character/zhuyan-1.png">-->
+                <p>此文件不参与展示</p>
             </article>
             <article class="col-md-6">
                 <hgroup class="Character-name">
@@ -87,71 +70,75 @@
                         <small class="text-muted">男主角</small>
                     </h1>
                 </hgroup>
-                <p>对现实持复杂看法的内外向高二男生。</p>
+                <p>对现实持复杂看法的内外向男生。</p>
                 <p>
                     在幼时由于家庭的原因过早接触了一些不适合自己的事物，异常喜爱抽象的事物，一度厌恶社交。母亲去世得很早，父亲作为美术教师也很忙，为了多见到父亲，他开始在父亲的美术辅导班上课。在这期间他认识了禾韵，没有多少朋友的他不知因为什么原因和她成为了知心好友，甚至因为她的缘故渐渐地接受了形象的事物。</p>
                 <p>在与女主失去联系后一度自闭。在父亲的努力下走出房间后开始以近乎病态的方式寻求友谊，虽然一开始因为缺乏社交而处处碰壁，但后来也渐渐地交到了朋友。但终究还是没有一个人能取代那个幼时的玩伴。</p>
                 <p> 在空虚而又充实的现在，那个人再次闯入了他的生活……</p>
 
             </article>
-            <article class="Zhuyan-right col-md-5">
-                <img class="Character-img center-block" src="img/Character/heyun-1.png">
+            <article class="Zhuyan-right black-bg col-md-5">
+                <!--<img class="Character-img center-block" src="img/Character/zhuyan-1.png">-->
+                <p>此文件不参与展示</p>
             </article>
         </div>
     </section>
     <section id="Team" class="container content">
-        <hgroup class="sectionTitle">
-            <h1 class="display-2">团队</h1>
-            <h2 class="display-4">Team</h2>
+        <hgroup class="sectionTitle main-left">
+            <h1 class="display-2">制作</h1>
+            <h2 class="display-4">Produce</h2>
         </hgroup>
         <div class="row">
+            <article class="col-md-12">
+                <hgroup>
+                    <img style="max-width: 290px" src="img/logo.png">
+                    <h6 class="text-muted">设计、美术与程序</h6>
+                </hgroup>
+            </article>
             <article class="col-md-4">
-                <h3>张修睿
+                <h4>张修睿
                     <small class="text-muted">主策划</small>
-                </h3>
-                <h3>Nick
+                </h4>
+                <h4>Nick
                     <small class="text-muted">主程序</small>
-                </h3>
-                <h3>面饼
+                </h4>
+                <h4>面饼
                     <small class="text-muted">主美术</small>
-                </h3>
-                <h3>小林
+                </h4>
+                <h4>小林
                     <small class="text-muted">程序</small>
-                </h3>
-                <h3>MH370
+                </h4>
+                <h4>MH370
                     <small class="text-muted">策划</small>
-                </h3>
+                </h4>
             </article>
             <article class="col-md-4">
-                <h3>歌漾
+                <h4>橙夜
                     <small class="text-muted">编剧</small>
-                </h3>
-                <h3>橙夜
-                    <small class="text-muted">编剧</small>
-                </h3>
-                <h3>莫分
-                    <small class="text-muted">编剧</small>
-                </h3>
-                <h3>白明
-                    <small class="text-muted">编剧</small>
-                </h3>
-                <h3>Lelouch
+                </h4>
+                <h4>歌漾
+                    <small class="text-muted">策划</small>
+                </h4>
+                <h4>莫分
+                    <small class="text-muted">策划</small>
+                </h4>
+                <h4>Lelouch
                     <small class="text-muted">音乐</small>
-                </h3>
+                </h4>
             </article>
             <article class="col-md-4">
-                <h3>汪汪
+                <h4>汪汪
                     <small class="text-muted">美术</small>
-                </h3>
-                <h3>议员
+                </h4>
+                <h4>议员
                     <small class="text-muted">美术</small>
-                </h3>
-                <h3>无君十一
+                </h4>
+                <h4>无君十一
                     <small class="text-muted">美术</small>
-                </h3>
-                <h3>木松
+                </h4>
+                <h4>木松
                     <small class="text-muted">美术</small>
-                </h3>
+                </h4>
             </article>
         </div>
     </section>

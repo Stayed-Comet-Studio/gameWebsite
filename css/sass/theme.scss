@@ -4,6 +4,8 @@
 **/
 
 // Brand Colors
+$main: #262263;
+$sub: #386354;
 $blue: #007bff;
 $indigo: #6610f2;
 $purple: #6f42c1;
@@ -45,7 +47,7 @@ $enable-grid-classes: true;
 $enable-print-styles: true;
 
 // Body
-$body-bg: $black;
+$body-bg: $main;
 $body-color: $white;
 
 // Links
