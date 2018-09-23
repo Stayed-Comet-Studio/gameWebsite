@@ -7,10 +7,12 @@ let sizeAlert = document.getElementById("sizeAlerts");
 function pageOnLoad() {
     pageContainCheck();
     coverReSize();
-    checkBrowserLevel() && blockBrowser();
+    body.style.display = "none";
+}
+
+function showPage() {
     document.getElementById("Loading").style.display = "none";
     body.style.display = "block";
-
 }
 
 function pageReSize() {
@@ -18,10 +20,6 @@ function pageReSize() {
     coverReSize();
 }
 
-function blockBrowser() {
-    body.style.display = "none";
-    document.getElementById("browserAlerts").style.display = "block";
-}
 
 function pageContainCheck() {
     if (html.clientHeight < 300 || html.clientWidth < 300) {
@@ -31,17 +29,6 @@ function pageContainCheck() {
         sizeAlert.style.display = "none";
         body.style.display = "block";
     }
-}
-
-function checkBrowserLevel() {
-    let browser = navigator.appName;
-    let b_version = navigator.appVersion;
-    let version = parseFloat(b_version);
-    if ((browser == "Netscape" ||
-        browser == "Microsoft Internet Explorer" ||
-        browser == "Mozilla") && (version > 4))
-        return false;
-    return true;
 }
 
 function coverReSize() {

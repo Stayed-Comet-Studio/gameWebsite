@@ -11302,11 +11302,36 @@ html {
         align-self: stretch !important;
     }
 }
-
 body {
-    background-color: #161626;
+    -webkit-animation: BG-revolution 8s infinite;
 }
 
+@-webkit-keyframes BG-revolution {
+    0% {
+        background-color: #141425;
+    }
+    50% {
+        background-color: #0B1433;
+    }
+    100% {
+        background-color: #141425;
+    }
+}
+
+@-webkit-keyframes LS-revolution {
+    0% {
+        background-color: #0B1433;
+        border-color: #0B1433;
+    }
+    50% {
+        background-color: #141425;
+        border-color: #141425;
+    }
+    100% {
+        background-color: #0B1433;
+        border-color: #0B1433;
+    }
+}
 .lead {
     font-size: 1.3rem;
 }
@@ -11321,10 +11346,12 @@ body {
     max-width: 200px;
 }
 
-.black-bg {
-    padding: 8px;
-    background-color: #000;
-    border-radius: 5px;
+.white-bg {
+    padding-top: 8px;
+    padding-left: 5px;
+    padding-right: 5px;
+    background-color: #e9ecef;
+    border-radius: 10px;
 }
 
 .Character-name {
@@ -11435,23 +11462,24 @@ footer {
         display: none;
     }
 }
+
+.main-left {
+    padding: 10px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
 @media (min-width: 520px) {
     .main-left {
-        padding-bottom: 5px;
-        padding-top: 5px;
-        padding-left: 10px;
-        border-left: #212529 300px solid;
+        border-left: #141425 300px solid;
         position: relative;
         left: -310px;
     }
 }
 @media (min-width: 1200px) {
     .main-left {
-        padding: 10px;
-        border-top-right-radius: 10px;
-        border-bottom-right-radius: 10px;
-        background-color: #212529;
-        border-left: #212529 999px solid;
+        background-color: #141425;
+        border-left: #141425 999px solid;
         position: relative;
         left: -1009px;
     }
@@ -11463,7 +11491,7 @@ footer {
     }
 }
 @media (max-width: 767.98px) {
-    .black-bg {
+    .white-bg {
         background-color: unset;
     }
 

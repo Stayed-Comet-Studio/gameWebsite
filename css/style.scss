@@ -4,8 +4,38 @@
 
 //Instead of the BG of theme.sass
 
+$animate-color-1: #0B1433;
+$animate-color-2: #141425;
+
 body {
-  background-color: #161626;
+  -webkit-animation: BG-revolution 8s infinite;
+}
+
+@-webkit-keyframes BG-revolution {
+  0% {
+    background-color: $animate-color-2
+  }
+  50% {
+    background-color: $animate-color-1
+  }
+  100% {
+    background-color: $animate-color-2
+  }
+}
+
+@-webkit-keyframes LS-revolution {
+  0% {
+    background-color: $animate-color-1;
+    border-color: $animate-color-1;
+  }
+  50% {
+    background-color: $animate-color-2;
+    border-color: $animate-color-2;
+  }
+  100% {
+    background-color: $animate-color-1;
+    border-color: $animate-color-1;
+  }
 }
 
 //Content from now
@@ -24,10 +54,12 @@ body {
   max-width: 200px;
 }
 
-.black-bg {
-  padding: 8px;
-  background-color: $black;
-  border-radius: 5px;
+.white-bg {
+  padding-top: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  background-color: $gray-200;
+  border-radius: 10px;
 }
 
 .Character-name {
@@ -111,7 +143,6 @@ footer {
 }
 
 #Cover {
-  //background: url("../img/coverBG.png") no-repeat center bottom;
   background: url("../img/bg.png") no-repeat center bottom;
   background-size: 100% auto;
   padding: 1rem;
@@ -144,14 +175,14 @@ footer {
 }
 
 .main-left {
+  padding: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 @media (min-width: 520px) {
   .main-left {
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-left: 10px;
-    border-left: $gray-900 300px solid;
+    border-left: $animate-color-2 300px solid;
     position: relative;
     left: -310px;;
   }
@@ -159,11 +190,8 @@ footer {
 
 @media (min-width: 1200px) {
   .main-left {
-    padding: 10px;
-    border-top-right-radius: 10px;
-    border-bottom-right-radius: 10px;
-    background-color: $gray-900;
-    border-left: $gray-900 999px solid;
+    background-color: $animate-color-2;
+    border-left: $animate-color-2 999px solid;
     position: relative;
     left: -1009px;;
   }
@@ -178,7 +206,7 @@ footer {
 
 
 @include media-breakpoint-down(sm) {
-  .black-bg {
+  .white-bg {
     background-color: unset;
   }
   .mainNav {
