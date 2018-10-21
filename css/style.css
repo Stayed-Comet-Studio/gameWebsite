@@ -7345,33 +7345,46 @@ html {
         align-self: stretch !important;
     }
 }
-
 @font-face {
     font-family: 'SourceHanSansR';
     src: url("../fonts/SourceHanSans-Regular.ttf") format("truetype");
 }
-
 @font-face {
     font-family: 'SourceHanSansL';
     src: url("../fonts/SourceHanSans-Light.otf") format("truetype");
 }
-
 @font-face {
     font-family: 'SourceHanSerifH';
     src: url("../fonts/SourceHanSerif-Heavy.ttc") format("truetype");
 }
-
 @font-face {
     font-family: 'SourceHanSansM';
     src: url("../fonts/SourceHanSerif-Medium.ttc") format("truetype");
 }
-
 @keyframes ButtonOnHold {
     0% {
         background-color: #454545;
     }
     100% {
         background-color: #2f2f2f;
+    }
+}
+
+@keyframes FadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes FadeOut {
+    0% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0;
     }
 }
 body {

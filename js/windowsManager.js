@@ -8,9 +8,9 @@ function pageOnLoad() {
     pageContainCheck();
     coverReSize();
     checkBrowserLevel() && blockBrowser();
-    document.getElementById("Loading").style.display = "none";
+    document.getElementById("Loading").style.display = 'none';
     body.style.display = "block";
-
+    body.style.animation = 'FadeIn 1s ease-in-out';
 }
 
 function pageReSize() {

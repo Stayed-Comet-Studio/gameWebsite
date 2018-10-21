@@ -37,6 +37,24 @@ $ButtonRELEASEColor: #1c1c1c;
   }
 }
 
+@keyframes FadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 100%;
+  }
+}
+
+@keyframes FadeOut {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 body {
   background-color: #180614;
   color: #d3d3d3;
