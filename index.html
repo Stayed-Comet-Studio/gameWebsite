@@ -25,17 +25,20 @@
     <!-- Contents -->
 
     <section id="Cover">
-        <img id="Logo-top" src="img/gameName.png">
-        <div id="Game-intro">
-            <p>我是谁？</p>
+        <div id="Introduction">
+            <div class="container">
+                <div class="logo">
+                    <p lang="en">undefined</p>
+                </div>
+                <div id="Game-intro">
+                    <p class="introButton">如梦般地</p></br>
+                    <p class="introButton">消逝于世界</p></br>
+                    <p class="introButton">坠落在内我</p>
+                </div>
+            </div>
         </div>
-        <small id="Notice">*游戏仍在制作中，最后内容可能会与目前公布内容不同。</small>
+        <small id="Notice">© Stayed Comet Studio 2018/undefined Project</small>
     </section>
-    <!-- Don't use
-    <hgroup class="inDevelop text-center">
-        <h1>网站正在开发中</h1>
-        <h2>In Developing</h2>
-    </hgroup>-->
 
     <section id="Character" class="container content">
         <hgroup class="sectionTitle main-left">
@@ -89,7 +92,7 @@
             <article class="col-md-12">
                 <hgroup>
                     <img style="max-width: 290px" src="img/logo.png">
-                    <h6 class="text-muted">设计、美术与程序</h6>
+                    <h6 class="text-muted">程序、设计与美术</h6>
                 </hgroup>
             </article>
             <article class="col-md-4">
@@ -106,18 +109,18 @@
                     <small class="text-muted">程序</small>
                 </h4>
                 <h4>MH370
-                    <small class="text-muted">策划</small>
+                    <small class="text-muted">地图策划</small>
                 </h4>
             </article>
             <article class="col-md-4">
-                <h4>橙夜
-                    <small class="text-muted">编剧</small>
+                <h4>白明
+                    <small class="text-muted">剧本主笔</small>
                 </h4>
                 <h4>歌漾
-                    <small class="text-muted">策划</small>
+                    <small class="text-muted">剧本设计</small>
                 </h4>
                 <h4>莫分
-                    <small class="text-muted">策划</small>
+                    <small class="text-muted">文本修正</small>
                 </h4>
                 <h4>Lelouch
                     <small class="text-muted">音乐</small>
@@ -137,6 +140,27 @@
                     <small class="text-muted">美术</small>
                 </h4>
             </article>
+            <article style="padding-top: 20px" class="col-md-12">
+                <hgroup>
+                    <h1>参与者</h1>
+                    <h6 class="text-muted">剧情与剧本</h6>
+                </hgroup>
+            </article>
+            <article class="col-md-4">
+                <h4>048
+                    <small class="text-muted">剧情设计</small>
+                </h4>
+                <h4>洛羽
+                    <small class="text-muted">剧情设计</small>
+                </h4>
+            </article>
+            <!--
+            <article style="padding-top: 20px" class="col-md-12">
+                <hgroup>
+                    <h1>外部参与方</h1>
+                    <h6 class="text-muted">其他</h6>
+                </hgroup>
+            </article>-->
         </div>
     </section>
     <footer>
@@ -147,8 +171,10 @@
             </section>
         </div>
     </footer>
-    <!-- Bootstrap Scripts -->
-    <!--<script src="js/bootstrap.js"></script>-->
+
 </div>
+<!-- Bootstrap Scripts -->
+<script src="https://cdn.bootcss.com/jquery/1.12.3/jquery.min.js"></script>
+<script src="js/bootstrap.js"></script>
 </body>
 </html>
