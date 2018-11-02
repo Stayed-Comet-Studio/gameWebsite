@@ -96,13 +96,9 @@ body {
 
 #Loading {
   position: absolute;
-  padding: 1rem;
-  $Loading-font-size: 1.1rem;
-  font-size: $Loading-font-size;
-  & > img {
-    max-height: $Loading-font-size;
-    max-width: $Loading-font-size;
-  }
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .content {

@@ -11,11 +11,11 @@ function Animate(OBJECT,TARGET,TIME,DELAY,ACTION) {
         action: ACTION,
         delay: DELAY,
         target: TARGET,
-        play: function (Level) {
+        play: function () {
             this.obj.style.animation = this.time + 's ' + this.action;
             this.obj.style.webkitAnimation = this.time + 's ' + this.action;
-            this.obj.style.animationDelay = Level + this.delay +'s';
-            this.obj.style.webkitAnimationDelay = Level + this.delay  +'s';
+            this.obj.style.animationDelay = + this.delay +'s';
+            this.obj.style.webkitAnimationDelay = this.delay  +'s';
         },
         stop: function () {
             this.obj.style.animation = ' ';
@@ -29,10 +29,10 @@ function Animate(OBJECT,TARGET,TIME,DELAY,ACTION) {
 function DisplayAction(OBJECT,TARGET,DISPLAY) {
     return {
         obj: OBJECT,
-        mode: false,
+        mode: DISPLAY,
         target: TARGET,
         play: function () {
-            if (DISPLAY) this.obj.style.display = 'block';
+            if (this.mode) this.obj.style.display = 'block';
             else this.obj.style.display = 'none';
         }
     }
@@ -45,11 +45,9 @@ function AnimateList(NAME) {
         listTop: 0,
 
         play: function () {
-            let Delay = 0;
             for (let j = 0; j < this.listTop ; j++) {
                 let inTurn = this.list[j];
-                inTurn.play(Delay);
-                Delay += inTurn.time;
+                inTurn.play();
             }
         },
 
