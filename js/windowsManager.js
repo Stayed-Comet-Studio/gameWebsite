@@ -5,15 +5,19 @@ let body = getObjectByID('context');
 let sizeAlert = getObjectByID('sizeAlerts');
 
 window.onload = function pageOnLoad() {
-    pageContainCheck();
+    //pageContainCheck();
     coverReSize();
-    document.getElementById("Loading").style.display = 'none';
-    body.style.display = "block";
-    body.style.animation = 'FadeIn 1s ease-in-out';
+    //Animation Setup
+    AnimateDirect.addAnimateList(AnimateList('LOADING'));
+    AnimateDirect.addAnimate('LOADING',Animate(getObjectByID('Loading'),'Loading animate',0.5,0,'FadeOut'));
+    AnimateDirect.addAnimate('LOADING',Animate(body,'Body animate',0.8,0,'FadeIn ease-in-out'));
+    AnimateDirect.addAnimate('LOADING',DisplayAction(body,'bodyOn',true));
+    AnimateDirect.addAnimate('LOADING',DisplayAction(getObjectByID('Loading'),'loadingOff',false));
+    AnimateDirect.playAnimateList('LOADING');
 };
 
 window.onresize = function pageReSize() {
-    pageContainCheck();
+    //pageContainCheck();
     coverReSize();
 };
 
