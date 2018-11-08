@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2.5px;
+      }
+
+      .cls-2 {
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <rect id="圆角矩形_1" data-name="圆角矩形 1" class="cls-1" x="8" y="8" width="85" height="85" rx="5" ry="5"/>
+  <path id="多边形_1" data-name="多边形 1" class="cls-2" d="M71.988,51l-38,21.992V29.008Z"/>
+</svg>

@@ -4,6 +4,217 @@
   Set this file before non-bootstrap-js.
  */
 
+
+/*
+    Introduction of AnimateDirector:
+        We only have ONE director to command this page's animation.
+        So we use this to direct all the animation in this page.
+ */
+let AnimateDirector = {
+    _FreshTime: 200,
+    _update: [],
+
+    play: function (Animation) {
+        if (Animation.Type === 'List') {
+            if (Animation.getFreshTime() !== this._FreshTime) {
+                Animation.setTimeTable();
+            }
+        }
+        Animation.play();
+    },
+    stop: function (Animation) {
+        Animation.stop();
+    },
+    setFreshTime: function (FT) {
+        if (FT <= 0) this._FreshTime = 200;
+        else this._FreshTime = FT;
+    },
+    getFreshTime: function () {
+        return this._FreshTime;
+    },
+    addUpdate: function (Obj) {
+        for (let i = 0; ; i++) {
+            if (this._update[i] !== null) continue;
+            this._update[i] = Obj;
+            return i;
+        }
+    },
+    getUpdate: function (Code) {
+        return this._update[Code];
+    },
+    removeUpdate: function (Code) {
+        this._update[Code] = null;
+    }
+};
+
+
+/*
+    Introduction of AnimateList:
+        Is consist of a group animations with an order.
+        Needs AnimateDirect to play this.
+ */
+function AnimationList() {
+    return {
+        _FreshTime: AnimateDirector.getFreshTime(),
+        _updateTime: function () {
+            return this._FreshTime / 1000
+        },
+
+        Type: 'List',
+        getFreshTime: function () {
+            return this._FreshTime;
+        },
+        //Basic
+        _updateCode: 0,
+        _Timer: null,
+        _Animation: [],
+        _AnimationMode: [],
+        _Keyframe: [],
+        _NowFrame: 0,
+        _NextKeyframe: 0,
+        _OnPlaying: null,
+
+        _update: function () {
+            alert('update');
+            // Enter a frame
+            // Ending update() check
+            if (this._NowFrame > this._Keyframe[this._Keyframe.length - 1]) {
+                alert('small');
+                this._removeTimer();
+                return;
+            }
+            // Animate loop
+            for (let i = this._NextKeyframe; i < this._Keyframe.length; i++) {
+                alert(i);
+                // If this frame is passed
+                if (this._NowFrame > this._Keyframe[i]) break;
+                // Keyframe check
+                if (this._NowFrame === this._Keyframe[i]) {
+                    // Play animate
+                    this._Animation[i].play();
+                    this._OnPlaying = this._Animation[i];
+                    this._NextKeyframe = this._Keyframe[i + 1];
+                }
+            }
+            // Point to next frame
+            this._NowFrame++;
+        },
+        _setTimer: function () {
+            this._updateCode = AnimateDirector.addUpdate(this._update());
+            let FT = this._FreshTime;
+            this._Timer = setTimeout("AnimateDirector.getUpdate(" + this._updateCode + ")", FT);
+        },
+        _removeTimer: function () {
+            clearTimeout(this._Timer);
+            AnimateDirector.removeUpdate(this._updateCode);
+            this._NowFrame = this._NextKeyframe = 0;
+            this._Timer = null;
+        },
+        setTimeTable() {
+            let FLT = this._updateTime();
+            let sumFrame = 0;
+            let lastFrame = 0;
+
+            for (let i = 0; i < this._Animation.length; i++) {
+                let thisFrame = (this._Animation[i].time + this._Animation[i].delay) / FLT;
+                let mode = this._AnimationMode[i];
+
+                switch (mode) {
+                    case 1:
+                        this._Keyframe[i] = sumFrame - lastFrame;
+                        break;
+                    case 0:
+                        this._Keyframe[i] = sumFrame;
+                        break;
+                }
+
+                lastFrame = thisFrame;
+                sumFrame += thisFrame;
+            }
+        },
+        //Commands
+
+        add: function (Animate, Mode) {
+            let top = this._Animation.length;
+            this._Animation[top] = Animate;
+
+            switch (Mode) {
+                case "after":// Set in 0 mode
+                case "After":
+                    this._AnimationMode[top] = 0;
+                    break;
+                case "with":// Set in 1 mode
+                case "With":
+                    this._AnimationMode[top] = 1;
+                    break
+            }
+
+            this.setTimeTable();
+        },
+        remove: function () {
+            let newArr1 = [];
+            let newArr2 = [];
+            for (let i = 0; i < this._Animation.length - 1; i++) {
+                newArr1[i] = this._Animation[i];
+                newArr2[i] = this._AnimationMode[i];
+            }
+            this._Animation = newArr1;
+            this._AnimationMode = newArr2;
+        },
+        play: function () {
+            alert('into');
+            this._setTimer();
+        },
+        stop: function () {
+            alert('out');
+            this._removeTimer();
+            this._OnPlaying.stop();
+        },
+        getUpdateCode: function () {
+            return this._updateCode;
+        }
+    };
+    //_OBJ.setTimeTable();
+    //return _OBJ;
+}
+
+
+/*
+    Introduction of originAnimate:
+        This is the basic animate object of other kinds of animate object,
+        Can't be installed,only to be extended.
+ */
+function originAnimate(Obj, Time, Delay) {
+    return {
+        obj: Obj,
+        time: Time,
+        delay: Delay,
+        play: null,
+        stop: null,
+        getType: null,
+    };
+}
+
+//Costumes Animate Weights
+
+function AAlert(Mes) {
+    let _OBJ = originAnimate(null, 0, 0);
+    _OBJ.Mes = Mes;
+    _OBJ.Type = 'Alert Message';
+    _OBJ.play = function () {
+        alert(this.Mes)
+    };
+    _OBJ.stop = function () {
+        alert('Animate Stopped.')
+    };
+
+    return _OBJ;
+}
+
+/*
+
+Last Version
+
 function Animate(OBJECT,TARGET,TIME,DELAY,ACTION) {
     return {
         obj: OBJECT,
@@ -41,6 +252,7 @@ function DisplayAction(OBJECT,TARGET,DISPLAY) {
 function AnimateList(NAME) {
     return {
         list: [],
+        timeTable: [],
         name: NAME,
         listTop: 0,
 
@@ -51,7 +263,7 @@ function AnimateList(NAME) {
             }
         },
 
-        add: function (ANIMATE) {
+        add: function (ANIMATE,SITUATION,TIME) {
             this.list[this.listTop] = ANIMATE;
             this.listTop++;
         },
@@ -147,3 +359,5 @@ let AnimateDirect = {
     }
 
 };
+
+*/
