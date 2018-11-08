@@ -56,16 +56,6 @@ getObjectByID('skipAnimate').onclick = function () {
         'body.style.display = \'block\'', 380);
 };
 
-function pageContainCheck() {
-    if (html.clientHeight < 320 || html.clientWidth < 320) {
-        sizeAlert.style.display = "block";
-        body.style.display = "none";
-    } else {
-        sizeAlert.style.display = "none";
-        body.style.display = "block";
-    }
-}
-
 function coverReSize() {
     let hei = html.clientHeight + "px";
     getObjectByID("Cover").style.height = hei;
