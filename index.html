@@ -27,20 +27,20 @@
         <div class="title">
             <h1 class="display-3">人物</h1>
             <h2>Character</h2>
-            <a class="return" onclick="returnMainland(getObjectByID('character-info'))">返回标题</a>
+            <a class="return" onclick="Character.returnBack()">返回标题</a>
         </div>
         <div class="row">
             <div class="col-md-3">
-                <div class="selector">
-                    <a onclick="swtichSectionItem(getObjectByID('C-HY'),getObjectByID('character-item'),getObjectByID('Info-C-HY'))"
+                <div class="selector" id="character-node">
+                    <a onclick="Character.switchItem(this,'Info-C-HY')"
                        id="C-HY">禾韵
                         <small>女主角</small>
                     </a>
-                    <a onclick="swtichSectionItem(getObjectByID('C-ZY'),getObjectByID('character-item'),getObjectByID('Info-C-ZY'))"
+                    <a onclick="Character.switchItem(this,'Info-C-ZY')"
                        id="C-ZY">褚言
                         <small>禾韵的发小</small>
                     </a>
-                    <a onclick="swtichSectionItem(getObjectByID('C-QZY'),getObjectByID('character-item'),getObjectByID('Info-C-QZY'))"
+                    <a onclick="Character.switchItem(this,'Info-C-QZY')"
                        id="C-QZY">仇子悦
                         <small>禾韵的同学</small>
                     </a>
@@ -77,7 +77,7 @@
             <p style="height: 0 ;margin: 0;"><br/></p>
             <a class="introButton SerifH" id="story">故事 Story</a>
             <p style="height: 0 ;margin: 0;"><br/></p>
-            <a class="introButton SerifH" onclick="showSection(getObjectByID('character-info'))" id="character">人物
+            <a class="introButton SerifH" onclick="Character.inTo()" id="character">人物
                 Character</a>
         </div>
         <small id="Notice" class="SerifM">© Stayed Comet Studio 2018/undefined Project</small>
