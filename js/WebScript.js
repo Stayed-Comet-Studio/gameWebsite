@@ -5,7 +5,6 @@ let Status = {
     html: document.documentElement,
     body: getObjectByID('context'),
 };
-Status.topElements = Status.body;
 
 window.onload = function pageOnLoad() {
     coverReSize();
@@ -14,7 +13,10 @@ window.onload = function pageOnLoad() {
     getObjectByID("Loading").style.animation = LoadingAnimate;
     getObjectByID("Loading").style.webkitAnimation = LoadingAnimate;
     Status.body.style.display = 'block';
-    setTimeout('getObjectByID("Loading").style.display = \'none\'', 380)
+    setTimeout(function () {
+        getObjectByID("Loading").style.display = 'none';
+        Status.topElements = Status.body;
+    }, 380)
     //TODO: This part is waiting to be completed.
     /*
     setTimeout(function () {
@@ -82,7 +84,7 @@ function getSelectionObject(root,node,item) {
 }
 
 
-// Selections
+// Selections Objects
 let Setting = getSelectionObject(
     getObjectByID('settings-info'),
     getObjectByID('settings-node'),
