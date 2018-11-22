@@ -1,8 +1,11 @@
 DebugMod = true;
 
 //let ADo = AnimateDirector; //ShortCode of AnimateDirector
-let html = document.documentElement;
-let body = getObjectByID('context');
+let Status = {
+    html: document.documentElement,
+    body: getObjectByID('context'),
+};
+Status.topElements = Status.body;
 
 window.onload = function pageOnLoad() {
     coverReSize();
@@ -10,7 +13,7 @@ window.onload = function pageOnLoad() {
     let LoadingAnimate = 'FadeOut 0.4s';
     getObjectByID("Loading").style.animation = LoadingAnimate;
     getObjectByID("Loading").style.webkitAnimation = LoadingAnimate;
-    body.style.display = 'block';
+    Status.body.style.display = 'block';
     setTimeout('getObjectByID("Loading").style.display = \'none\'', 380)
     //TODO: This part is waiting to be completed.
     /*
@@ -27,7 +30,7 @@ window.onresize = function pageReSize() {
 };
 
 function coverReSize() {
-    let hei = html.clientHeight + "px";
+    let hei = Status.html.clientHeight + "px";
     getObjectByID("Cover").style.height = hei;
     getObjectByID("Animates").style.height = hei;
 }
@@ -43,21 +46,22 @@ function getSelectionObject(root,node,item) {
         _item: ITEM,
         _node: NODE,
         inTo: function () {
-            body.style.animation = body.style.webkitAnimation = 'FadeOut 0.4s';
+            Status.body.style.animation = Status.body.style.webkitAnimation = 'FadeOut 0.4s';
             this._root.style.animation = this._root.style.webkitAnimation = Info.style.webkitAnimation = Info.style.animation = 'FadeIn 0.4s';
             this._root.style.display = Info.style.display = 'block';
+            Status.topElements = this._root;
             setTimeout(function () {
-                body.style.display = 'none';
-            }, 380);
+                Status.body.style.display = 'none';
+            }, 330);
         },
         returnBack: function () {
             this._root.style.animation = this._root.style.webkitAnimation = Info.style.webkitAnimation = Info.style.animation = 'FadeOut 0.4s';
-            body.style.animation = body.style.webkitAnimation = 'FadeIn 0.4s';
-            body.style.display = 'block';
-            let This = this._root;
+            Status.body.style.animation = Status.body.style.webkitAnimation = 'FadeIn 0.4s';
+            Status.body.style.display = 'block';
             setTimeout(function () {
-                This.style.display = Info.style.display = 'none';
-            }, 380);
+                Status.topElements.style.display = Info.style.display = 'none';
+                Status.topElements = Status.body;
+            }, 330);
         },
         clearItem: function () {
             for (let i = 0; i < this._item.length; i++)
@@ -79,6 +83,16 @@ function getSelectionObject(root,node,item) {
 
 
 // Selections
+let Setting = getSelectionObject(
+    getObjectByID('settings-info'),
+    getObjectByID('settings-node'),
+    getObjectByID('settings-item'));
+
+let Story = getSelectionObject(
+    getObjectByID('story-info'),
+    getObjectByID('story-node'),
+    getObjectByID('story-item'));
+
 let Character = getSelectionObject(
     getObjectByID('character-info'),
     getObjectByID('character-node'),

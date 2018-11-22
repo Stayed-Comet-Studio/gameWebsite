@@ -61,6 +61,52 @@
             </div>
         </div>
     </section>
+    <section class="Base container" id="settings-info">
+        <div class="title">
+            <h1 class="display-3">设定</h1>
+            <h2>Setting</h2>
+            <a class="return" onclick="Setting.returnBack()">返回标题</a>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="selector" id="settings-node">
+                    <a onclick="Setting.switchItem(this,'Info-S-World')"
+                       id="S-World">世界
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="selection-item" id="settings-item">
+                    <article id="Info-S-World">
+                        <p>世界设定的介绍性文本</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="Base container" id="story-info">
+        <div class="title">
+            <h1 class="display-3">故事</h1>
+            <h2>Story</h2>
+            <a class="return" onclick="Setting.returnBack()">返回标题</a>
+        </div>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="selector" id="story-node">
+                    <a onclick="Setting.switchItem(this,'Info-ST-Start')"
+                       id="ST-Start">一切的开始
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="selection-item" id="story-item">
+                    <article id="Info-ST-Start">
+                        <p>世界设定的介绍性文本</p>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
 </div>
 <div id="context">
 
@@ -73,9 +119,9 @@
             <div id="Game-intro">
                 <p class="SerifH">无能的挽歌 • 终焉的开始</p>
             </div>
-            <a class="introButton SerifH" id="settings">设定 Settings</a>
+            <a class="introButton SerifH" onclick="Setting.inTo()" id="settings">设定 Setting</a>
             <p style="height: 0 ;margin: 0;"><br/></p>
-            <a class="introButton SerifH" id="story">故事 Story</a>
+            <a class="introButton SerifH" onclick="Story.inTo()" id="story">故事 Story</a>
             <p style="height: 0 ;margin: 0;"><br/></p>
             <a class="introButton SerifH" onclick="Character.inTo()" id="character">人物
                 Character</a>

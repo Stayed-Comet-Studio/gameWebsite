@@ -25,6 +25,10 @@
   }
 }
 
+.Base {
+  display: none;
+}
+
 .selector {
   & > a {
     margin-top: 2px;
