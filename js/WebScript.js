@@ -35,6 +35,7 @@ function coverReSize() {
     let hei = Status.html.clientHeight + "px";
     getObjectByID("Cover").style.height = hei;
     getObjectByID("Animates").style.height = hei;
+    Info.style.minHeight = hei;
 }
 
 
@@ -49,21 +50,21 @@ function getSelectionObject(root,node,item) {
         _node: NODE,
         inTo: function () {
             Status.body.style.animation = Status.body.style.webkitAnimation = 'FadeOut 0.4s';
-            this._root.style.animation = this._root.style.webkitAnimation = Info.style.webkitAnimation = Info.style.animation = 'FadeIn 0.4s';
+            this._root.style.animation = this._root.style.webkitAnimation = Info.style.webkitAnimation = Info.style.animation = 'LeftIn ease-in-out 0.4s';
             this._root.style.display = Info.style.display = 'block';
             Status.topElements = this._root;
             setTimeout(function () {
                 Status.body.style.display = 'none';
-            }, 330);
+            }, 390);
         },
         returnBack: function () {
-            this._root.style.animation = this._root.style.webkitAnimation = Info.style.webkitAnimation = Info.style.animation = 'FadeOut 0.4s';
+            this._root.style.animation = this._root.style.webkitAnimation = Info.style.webkitAnimation = Info.style.animation = 'LeftOut ease-in-out 0.4s';
             Status.body.style.animation = Status.body.style.webkitAnimation = 'FadeIn 0.4s';
             Status.body.style.display = 'block';
             setTimeout(function () {
                 Status.topElements.style.display = Info.style.display = 'none';
                 Status.topElements = Status.body;
-            }, 330);
+            }, 380);
         },
         clearItem: function () {
             for (let i = 0; i < this._item.length; i++)
@@ -88,12 +89,14 @@ function getSelectionObject(root,node,item) {
 let Setting = getSelectionObject(
     getObjectByID('settings-info'),
     getObjectByID('settings-node'),
-    getObjectByID('settings-item'));
+    getObjectByID('settings-item')
+);
 
 let Story = getSelectionObject(
     getObjectByID('story-info'),
     getObjectByID('story-node'),
-    getObjectByID('story-item'));
+    getObjectByID('story-item')
+);
 
 let Character = getSelectionObject(
     getObjectByID('character-info'),
